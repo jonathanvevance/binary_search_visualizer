@@ -1,4 +1,4 @@
-/* ! MAKE RESPONSIVE (EVERYTHING IS %AGES, DO MANUAL CALCULATIONS) */
+/* ! MAKE RESPONSIVE (EVERYTHING IS %AGES, DO MANUAL CALCULATIONS OR SEE CALC) */
 
 /* ------------------------------------------------------------------------------- */
 /* ---------------------------- GENERAL SETTINGS --------------------------------- */
@@ -136,13 +136,46 @@ body {
   padding-top: 5px;
 }
 
+.mid {
+  border: var(--border-weight) solid blue;
+}
+
+.found {
+  border: var(--border-weight) solid #06d6a0;
+}
+
+/* variable space */
 #variable-space {
   width: 20%;
   height: 100%;
+  text-align: center;
   border-left: 3px solid var(--secondary-color);
   position: absolute;
   right: 0;
   top: 0;
+}
+
+#message {
+  padding: 35px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+#variable-display {
+  text-align: left;
+  width: 80%;
+  font-size: 200%;
+  padding: 10px;
+  margin: 15px auto;
+}
+
+.equal-to {
+  width: 50px;
+}
+
+td {
+  height: 50px;
+  margin-top: 50px;
 }
 
 /* ------------------------------------------------------------------------------- */

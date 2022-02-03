@@ -16,8 +16,8 @@
 
     <!-- nav bar -->
     <div id="stripe">
-      <button>New Numbers</button>
-      <button>RESET</button>
+      <button id="reset-array">New Numbers</button>
+      <button id="reset-flow">Reset Run</button>
     </div>
 
     <!-- container -->
@@ -161,7 +161,29 @@
       </div>
 
       <!-- variable space -->
-      <div id="variable-space">hello</div>
+      <div id="variable-space">
+        <h1 id="message">not FOUND</h1>
+        <!-- table -->
+        <table id="variable-display">
+          <tr>
+            <td>start</td>
+            <td class="equal-to">=</td>
+            <td><span id="start-display"></span></td>
+          </tr>
+          <tr>
+            <td>end</td>
+            <td class="equal-to">=</td>
+            <td><span id="end-display"></span></td>
+          </tr>
+          <tr>
+            <td>mid</td>
+            <td class="equal-to">=</td>
+            <td><span id="mid-display"></span></td>
+          </tr>
+        </table>
+      </div>
     </div>
+
+    <script src="assets/scripts/script.js"></script>
   </body>
 </html>
