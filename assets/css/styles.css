@@ -1,3 +1,9 @@
+/* ! MAKE RESPONSIVE (EVERYTHING IS %AGES, DO MANUAL CALCULATIONS) */
+
+/* ------------------------------------------------------------------------------- */
+/* ---------------------------- GENERAL SETTINGS --------------------------------- */
+/* ------------------------------------------------------------------------------- */
+
 :root {
   --primary-color: #03045e;
   --secondary-color: white;
@@ -10,6 +16,14 @@
   box-sizing: border-box;
 }
 
+/* ------------------------------------------------------------------------------- */
+/* ------------------------------ BODY SETTINGS ---------------------------------- */
+/* ------------------------------------------------------------------------------- */
+
+.flex {
+  display: flex;
+}
+
 body {
   color: var(--secondary-color);
   background-color: var(--primary-color);
@@ -18,6 +32,37 @@ body {
   transition: all 0.3s;
 }
 
+/* top banner */
+#top-banner {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+/* stripe */
+#stripe {
+  text-align: center;
+}
+
+#stripe button {
+  margin: 0 10px;
+  height: 100%;
+  font-size: 1.8rem;
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--fireOrange);
+  font-weight: 700;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+#stripe button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* container */
 #container {
   width: 90%;
   margin: 50px auto;
@@ -27,35 +72,11 @@ body {
   border: var(--border-weight) solid var(--secondary-color);
 }
 
-#content {
+#working-space {
   width: 80%;
 }
 
-.flex {
-  display: flex;
-}
-
-.idx {
-  padding-top: 10px;
-  font-size: 200%;
-}
-
-#numbers-space {
-  justify-content: center;
-}
-
-.number-idx {
-  width: 90px;
-  margin: 10px;
-  text-align: center;
-}
-
-.number {
-  padding: 10px;
-  font-size: 300%;
-  border: 2px solid var(--secondary-color);
-}
-
+/* query-space */
 #query-space {
   text-align: center;
   padding-top: 30px;
@@ -77,35 +98,42 @@ body {
   font-weight: 500;
   position: relative;
   bottom: 2px;
-}
-
-#stripe {
-  text-align: center;
+  outline: none;
+  color: var(--secondary-color);
   background-color: var(--primary-color);
+  border: var(--border-weight) solid var(--secondary-color);
 }
 
-#stripe button {
-  margin: 0 10px;
-  height: 100%;
-  font-size: 1.8rem;
+/* number space */
+#numbers-space {
+  justify-content: center;
+}
+
+.number-idx {
+  width: 90px;
+  margin: 10px;
+  text-align: center;
+}
+
+.number {
   padding: 10px;
-  text-transform: uppercase;
-  color: var(--fireOrange);
-  font-weight: 700;
-  background-color: var(--primary-color);
-  border: none;
+  font-size: 300%;
+  border: 2px solid var(--secondary-color);
 }
 
-#stripe button:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+.idx {
+  padding-top: 10px;
+  font-size: 200%;
 }
 
-#top-banner {
-  margin-top: 10px;
-  padding: 20px;
-  text-align: center;
-  font-size: 1.7rem;
+.start {
+  visibility: hidden;
+  padding-bottom: 5px;
+}
+
+.end {
+  visibility: hidden;
+  padding-top: 5px;
 }
 
 #variable-space {
@@ -116,6 +144,10 @@ body {
   right: 0;
   top: 0;
 }
+
+/* ------------------------------------------------------------------------------- */
+/* ----------------------------- BROWSER SETTINGS -------------------------------- */
+/* ------------------------------------------------------------------------------- */
 
 /* input number, hide arrows */
 /* Chrome, Safari, Edge, Opera */
