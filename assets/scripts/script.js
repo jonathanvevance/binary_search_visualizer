@@ -146,6 +146,11 @@ const instructionPane = document.getElementById("instruction")
 // main logic
 function main() {
 
+    const isMobile = () => window.matchMedia('(max-width: 700px)').matches
+    if (isMobile()) {
+        alert("Mobile")
+    }
+
     array = populateArray()
 
     numInput.addEventListener("keydown", function(event) {
