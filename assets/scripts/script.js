@@ -132,6 +132,7 @@ const startDisplay = document.getElementById("start-display")
 const endDisplay = document.getElementById("end-display")
 const midDisplay = document.getElementById("mid-display")
 const midDisplayRow = document.getElementById("mid-row")
+const targetDisplay = document.getElementById("target-display")
 
 // main logic
 function main() {
@@ -141,6 +142,7 @@ function main() {
     numInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             target = Number(numInput.value)
+            targetDisplay.textContent = target
             numInput.blur()
             result = binarySearch(array)
             setupFlow()
@@ -162,6 +164,7 @@ function main() {
         array = populateArray()
         numInput.value = ""
         target = undefined
+        targetDisplay.textContent = ""
         clearFlow()
     })
 
