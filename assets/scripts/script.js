@@ -67,7 +67,7 @@ const showFlow = () => {
         arrayObjects.item(i).getElementsByClassName('end')[0].style.visibility = "hidden"
 
         if (i < start || i > end) {
-            arrayObjects.item(i).style.opacity = 0.5
+            arrayObjects.item(i).style.opacity = numberReducedOpacity
         }
 
         if (i === start) {
@@ -130,10 +130,13 @@ const isMobile = () => {
 
 // Initialize variablse
 let flowStep = 0
-const lenArray = 9
 let array = undefined
 let target = undefined
 let result = undefined
+
+const lenArray = 9
+const numberReducedOpacity = 0.5
+const contentReducedOpacity = 0.2
 
 //  document queries
 const numInput = document.getElementById("query")
@@ -203,7 +206,7 @@ function main() {
             instructionPane.style.display = "block"
             contentElements.forEach((element) => {
                 element.style.pointerEvents = "none"
-                element.style.opacity = 0.1
+                element.style.opacity = contentReducedOpacity
             })
         }
     })
