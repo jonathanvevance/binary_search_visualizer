@@ -149,6 +149,8 @@ function main() {
     const isMobile = () => window.matchMedia('(max-width: 700px)').matches
     if (isMobile()) {
         alert("Mobile")
+    } else {
+        alert("blah")
     }
 
     array = populateArray()
