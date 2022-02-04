@@ -162,23 +162,25 @@
 
       <!-- variable space -->
       <div id="variable-space">
-        <h1 id="message">not FOUND</h1>
+        <div id="message">
+          <h1 id="message-text"></h1>
+        </div>
         <!-- table -->
         <table id="variable-display">
           <tr>
             <td>start</td>
             <td class="equal-to">=</td>
-            <td><span id="start-display"></span></td>
+            <td class="ptr-vals"><span id="start-display"></span></td>
           </tr>
           <tr>
             <td>end</td>
             <td class="equal-to">=</td>
-            <td><span id="end-display"></span></td>
+            <td class="ptr-vals"><span id="end-display"></span></td>
           </tr>
-          <tr>
+          <tr id="mid-row">
             <td>mid</td>
             <td class="equal-to">=</td>
-            <td><span id="mid-display"></span></td>
+            <td class="ptr-vals"><span id="mid-display"></span></td>
           </tr>
         </table>
       </div>

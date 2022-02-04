@@ -7,6 +7,8 @@
 :root {
   --primary-color: #03045e;
   --secondary-color: white;
+  --winning-green: #06d6a0;
+  --highlight-border-blue: blue;
   --border-weight: 3px;
 }
 
@@ -133,15 +135,18 @@ body {
 
 .end {
   visibility: hidden;
-  padding-top: 5px;
 }
 
 .mid {
-  border: var(--border-weight) solid blue;
+  border: var(--border-weight) solid var(--highlight-border-blue);
 }
 
-.found {
-  border: var(--border-weight) solid #06d6a0;
+.found-border {
+  border: var(--border-weight) solid var(--winning-green);
+}
+
+.found-color {
+  color: var(--winning-green);
 }
 
 /* variable space */
@@ -157,6 +162,7 @@ body {
 
 #message {
   padding: 35px;
+  height: 100px;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
@@ -171,6 +177,10 @@ body {
 
 .equal-to {
   width: 50px;
+}
+
+.ptr-vals {
+  width: 20px;
 }
 
 td {

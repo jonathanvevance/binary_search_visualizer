@@ -1,7 +1,5 @@
-/*
-    2. display function
-*/
 
+// functions
 const generateNumbers = (num) => {
     const array = []
     for (let i = 0; i < num; ++i) {
@@ -29,15 +27,20 @@ const binarySearch = (array) => {
         else if (array[mid] > target) end = mid - 1
         else return {"found": true, "flow": flow}
     }
-    flow.push({"start": start, "end": end, "mid": null})
+    flow.push({"start": start, "end": end, "mid": "-"})
     return {"found": false, "flow": flow}
 }
 
 const clearFlow = () => {
 
+    startDisplay.textContent = ""
+    endDisplay.textContent = ""
+    midDisplay.textContent = ""
+
     for (let i = 0; i < array.length; ++i) {
+        messageText.textContent = ""
         arrayObjects.item(i).style.opacity = 1
-        arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("found")
+        arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("found-border")
         arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("mid")
         arrayObjects.item(i).getElementsByClassName('start')[0].style.visibility = "hidden"
         arrayObjects.item(i).getElementsByClassName('end')[0].style.visibility = "hidden"
@@ -50,12 +53,15 @@ const showFlow = () => {
     const end = result.flow[flowStep].end
     const mid = result.flow[flowStep].mid
 
-    console.log(start, end, mid, flowStep);
+    startDisplay.textContent = start
+    endDisplay.textContent = end
+    midDisplay.textContent = mid
+    midDisplayRow.classList.remove("found-color")
 
     for (let i = 0; i < array.length; ++i) {
 
         arrayObjects.item(i).style.opacity = 1
-        arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("found")
+        arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("found-border")
         arrayObjects.item(i).getElementsByClassName('number')[0].classList.remove("mid")
         arrayObjects.item(i).getElementsByClassName('start')[0].style.visibility = "hidden"
         arrayObjects.item(i).getElementsByClassName('end')[0].style.visibility = "hidden"
@@ -73,14 +79,21 @@ const showFlow = () => {
         if (i === mid) {
             arrayObjects.item(i).getElementsByClassName('number')[0].classList.add("mid")
             if (array[mid] === target) {
-                arrayObjects.item(i).getElementsByClassName('number')[0].classList.add("found")
+                arrayObjects.item(i).getElementsByClassName('number')[0].classList.add("found-border")
             }
         }
     }
-}
 
-const showMessage = () => {
-    return //! TODO after styling variable-space
+    if (flowStep === result.flow.length-1) {
+        if (result.found) {
+            messageText.textContent = "Found"
+            midDisplayRow.classList.add("found-color")
+        } else {
+            messageText.textContent = "Not Found"
+        }
+    } else {
+        messageText.textContent = ""
+    }
 }
 
 const setupFlow = () => {
@@ -92,9 +105,6 @@ const forwardFlow = () => {
     if (flowStep < result.flow.length-1) {
         flowStep += 1
         showFlow()
-        if (flowStep === result.flow.length-1) {
-            showMessage()
-        }
     }
 }
 
@@ -117,7 +127,13 @@ const numInput = document.getElementById("query")
 const arrayObjects = document.getElementsByClassName("number-idx")
 const resetArray = document.getElementById("reset-array")
 const resetFlow = document.getElementById("reset-flow")
+const messageText = document.getElementById("message-text")
+const startDisplay = document.getElementById("start-display")
+const endDisplay = document.getElementById("end-display")
+const midDisplay = document.getElementById("mid-display")
+const midDisplayRow = document.getElementById("mid-row")
 
+// main logic
 function main() {
 
     array = populateArray()
@@ -148,7 +164,6 @@ function main() {
         target = undefined
         clearFlow()
     })
-
 
 }
 
