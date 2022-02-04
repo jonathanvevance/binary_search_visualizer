@@ -34,6 +34,40 @@ body {
   transition: all 0.3s;
 }
 
+/* instructions */
+#infoButton {
+  font-size: 300%;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+#infoButton:hover {
+  transform: scale(1.1);
+}
+
+#instruction {
+  font-size: 300%;
+  padding: 20px;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  z-index: 2;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+}
+
+#instruction ul {
+  font-size: 60%;
+  line-height: 150%;
+  list-style: none;
+}
+
+li {
+  margin: 5px 0;
+}
+
 /* top banner */
 #top-banner {
   margin-top: 10px;

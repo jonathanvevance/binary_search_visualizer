@@ -115,6 +115,10 @@ const backwardFlow = () => {
     }
 }
 
+const toggleInstructions = () => {
+    
+}
+
 // Initialize variablse
 let flowStep = 0
 const lenArray = 9
@@ -133,6 +137,11 @@ const endDisplay = document.getElementById("end-display")
 const midDisplay = document.getElementById("mid-display")
 const midDisplayRow = document.getElementById("mid-row")
 const targetDisplay = document.getElementById("target-display")
+const topBanner = document.getElementById("top-banner")
+const stripe = document.getElementById("stripe")
+const container = document.getElementById("container")
+const infoButton = document.getElementById("infoButton")
+const instructionPane = document.getElementById("instruction")
 
 // main logic
 function main() {
@@ -166,6 +175,24 @@ function main() {
         target = undefined
         targetDisplay.textContent = ""
         clearFlow()
+    })
+
+    const contentElements = [container, stripe, topBanner]
+
+    infoButton.addEventListener("click", function() {
+        if (container.style.pointerEvents === "none") {
+            instructionPane.style.display = "none"
+            contentElements.forEach((element) => {
+                element.style.pointerEvents = "auto"
+                element.style.opacity = 1
+            })
+        } else {
+            instructionPane.style.display = "block"
+            contentElements.forEach((element) => {
+                element.style.pointerEvents = "none"
+                element.style.opacity = 0.1
+            })
+        }
     })
 
 }
