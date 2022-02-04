@@ -115,10 +115,6 @@ const backwardFlow = () => {
     }
 }
 
-const toggleInstructions = () => {
-    
-}
-
 // Initialize variablse
 let flowStep = 0
 const lenArray = 9
