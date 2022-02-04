@@ -156,7 +156,7 @@ const instructionPane = document.getElementById("instruction")
 function main() {
 
     if (isMobile()) {
-        alert("THIS WEBSITE IS NOT DESIGNED FOR MOBILE BROWSER EXPERIENCE. PLEASE CONSIDER SWITCHING TO A DESKTOP/LAPTOP")
+        alert("THIS WEBSITE IS NOT DESIGNED FOR MOBILE BROWSER EXPERIENCE. PLEASE CONSIDER SWITCHING TO A DESKTOP OR A LAPTOP")
     }
 
     array = populateArray()
